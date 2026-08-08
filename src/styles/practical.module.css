@@ -4,7 +4,10 @@
 .page {
   max-width: 720px;
   margin: 0 auto;
-  padding: 72px 24px 48px;
+  /* Bottom padding clears the fixed BottomNav — this page has no
+     min-height:100dvh section of its own, so unlike .screen this is the
+     only place that clearance needs to live. */
+  padding: 72px 24px 110px;
   display: flex;
   flex-direction: column;
   gap: 24px;

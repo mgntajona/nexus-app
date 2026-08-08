@@ -84,6 +84,12 @@
   text-align: center;
 }
 
+/* Extra clearance on the last section only, so its content (the email
+   form) never sits behind the fixed BottomNav. */
+.section:last-of-type {
+  padding-bottom: 110px;
+}
+
 .sectionTitle {
   font-family: var(--font-display);
   font-style: var(--font-fontStyleDisplay);

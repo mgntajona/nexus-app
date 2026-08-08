@@ -60,8 +60,12 @@ svg {
 
 .app-content {
   min-height: 100dvh;
-  padding-bottom: 76px; /* clears the fixed BottomNav */
 }
+/* Bottom-nav clearance lives on each page's own content instead of here —
+   stacking a fixed padding-bottom on top of a child that's already
+   min-height:100dvh pushes the total past the viewport (100dvh + padding),
+   which is exactly the extra scroll a short mobile viewport has no room
+   to hide. */
 
 @media (prefers-reduced-motion: reduce) {
   *,
