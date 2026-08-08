@@ -1,0 +1,75 @@
+/* Baseline reset. Every color/font/spacing token below this point comes
+   from the active era's ThemeProvider as `--group-key` custom properties —
+   nothing here hardcodes a per-era color. */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  /* Neutral fallback so there's no flash of unstyled content before the
+     first ThemeProvider mounts; the default theme repeats these anyway. */
+  color: #221f1c;
+  background: #f4f3f1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.app-shell {
+  min-height: 100dvh;
+  width: 100%;
+  background: var(--colors-bg);
+  color: var(--colors-ink);
+  transition: background-color var(--motion-base) var(--motion-easing);
+}
+
+.app-content {
+  min-height: 100dvh;
+  padding-bottom: 76px; /* clears the fixed BottomNav */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

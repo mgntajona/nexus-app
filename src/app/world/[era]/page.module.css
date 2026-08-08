@@ -1,0 +1,97 @@
+.world {
+  background: var(--colors-bg);
+  color: var(--colors-ink);
+  min-height: 100dvh;
+}
+
+.hero {
+  position: relative;
+  min-height: 80dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  max-width: 560px;
+  padding: 32px 24px;
+}
+
+.portraitWrap {
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: var(--shadow-glow);
+  border: 2px solid var(--colors-surfaceBorder);
+}
+
+.portrait {
+  display: block;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-style: var(--font-fontStyleDisplay);
+  letter-spacing: var(--font-letterSpacingDisplay);
+  font-size: clamp(32px, 6vw, 56px);
+}
+
+.tagline {
+  font-family: var(--font-body);
+  color: var(--colors-accent);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.blurb {
+  font-family: var(--font-body);
+  color: var(--colors-inkMuted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.backLink {
+  margin-top: 8px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--colors-inkMuted);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--motion-fast) var(--motion-easing);
+}
+
+.backLink:hover {
+  border-color: var(--colors-accent);
+  color: var(--colors-accent);
+}
+
+.section {
+  position: relative;
+  padding: 64px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-style: var(--font-fontStyleDisplay);
+  font-size: 26px;
+}
+
+.spotifyStack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 480px;
+}
