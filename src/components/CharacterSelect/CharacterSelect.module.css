@@ -94,10 +94,14 @@
   }
 }
 
-/* Outer clip-path layer = the "border" color; inset 2px sibling on top in
-   the fill color = the border ring. Both use the same clip-path polygon so
-   they read as one slanted, beveled panel. */
+/* Three stacked clip-path layers, all cut with the same polygon, make an
+   engraved-metal bezel instead of a flat ring: a bright brushed-steel
+   outer edge (.frame), a dark recessed channel (.frameGroove), then the
+   panel's own fill (.frameFill). Plain CSS `border` can't do any of this
+   on a clipped diagonal edge — it'd only render on the two flat top/bottom
+   edges — so each ring is its own inset, independently-clipped layer. */
 .frame,
+.frameGroove,
 .frameFill {
   position: absolute;
   z-index: 0;
@@ -106,19 +110,52 @@
 
 .frame {
   inset: 0;
-  background: var(--colors-surfaceBorder);
+  background: linear-gradient(135deg, #e4e2e6 0%, #a9a6ad 30%, #504e54 62%, #1c1b1e 100%);
   transition: background var(--motion-base) var(--motion-easing);
 }
 
+.frameGroove {
+  inset: 3px;
+  background: #0a0a0b;
+}
+
 .frameFill {
-  inset: 2px;
+  inset: 5px;
   background: var(--colors-ink);
 }
 
 .card:hover .frame,
 .card:focus-visible .frame,
 .card.selected .frame {
-  background: var(--colors-accent);
+  background: linear-gradient(135deg, #ffd6f7 0%, var(--colors-accent) 35%, #8a1f7c 68%, #2c0d28 100%);
+}
+
+/* One 4-point sparkle at each true (uncut) corner — the same motif as the
+   logo's star, echoing the brand mark rather than a generic game-UI rivet. */
+.sparkle {
+  position: absolute;
+  z-index: 2;
+  font-size: 11px;
+  line-height: 1;
+  color: #e4e2e6;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+.sparkleTr {
+  top: 6px;
+  right: calc(var(--slant) * 0.35);
+}
+
+.sparkleBl {
+  bottom: 6px;
+  left: calc(var(--slant) * 0.35);
+}
+
+.card:hover .sparkle,
+.card:focus-visible .sparkle,
+.card.selected .sparkle {
+  color: var(--colors-accent);
 }
 
 .portraitWrap {

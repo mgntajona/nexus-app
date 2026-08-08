@@ -96,7 +96,14 @@ export function CharacterSelect() {
               >
                 <span className={styles.teaser}>{entry.teaser}</span>
                 <span className={styles.frame} aria-hidden="true" />
+                <span className={styles.frameGroove} aria-hidden="true" />
                 <span className={styles.frameFill} aria-hidden="true" />
+                <span className={[styles.sparkle, styles.sparkleTr].join(" ")} aria-hidden="true">
+                  ✦
+                </span>
+                <span className={[styles.sparkle, styles.sparkleBl].join(" ")} aria-hidden="true">
+                  ✦
+                </span>
                 <span className={styles.portraitWrap}>
                   <Image
                     src="/images/locked/portrait.svg"
@@ -132,7 +139,14 @@ export function CharacterSelect() {
             >
               {isLast && !lockedIn && <span className={styles.continueBadge}>Continue</span>}
               <span className={styles.frame} aria-hidden="true" />
+              <span className={styles.frameGroove} aria-hidden="true" />
               <span className={styles.frameFill} aria-hidden="true" />
+              <span className={[styles.sparkle, styles.sparkleTr].join(" ")} aria-hidden="true">
+                ✦
+              </span>
+              <span className={[styles.sparkle, styles.sparkleBl].join(" ")} aria-hidden="true">
+                ✦
+              </span>
               <span className={styles.portraitWrap}>
                 <Image src={theme.assets.portrait} alt="" fill className={styles.portrait} />
               </span>
