@@ -45,7 +45,7 @@ export const shadoworkTheme = createTheme("shadowork", {
     shape: "ember",
   },
   assets: {
-    portrait: "/images/shadowork/portrait.svg",
+    portrait: "/images/shadowork/portrait.webp",
     signatureAudio: "/audio/shadowork/select.mp3",
     confirmAudio: "/audio/shadowork/confirm.mp3",
   },

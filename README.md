@@ -44,11 +44,12 @@ npm run dev
 
 ## Known placeholders
 
-No real character art or signature audio exists yet:
-
-- `public/images/{default,shadowork,faerie,locked}/portrait.svg` are
-  hand-drawn placeholder silhouettes in each era's palette, not photos.
-  Swap the files in place — nothing else needs to change.
+- `public/images/faerie/portrait.webp` and `public/images/shadowork/portrait.webp`
+  are the real character portraits.
+- `public/images/{default,locked}/portrait.svg` are still hand-drawn
+  placeholder silhouettes — real art drops in the same way the Faerie/
+  SHADOWORK ones did: add the file, point `theme.assets.portrait` at it
+  in `src/themes/<era>.ts`.
 - `public/audio/` is empty; see `public/audio/README.md` for the exact
   filenames the site looks for. A missing/failing snippet is a silent
   no-op (`src/components/CharacterSelect/useEraAudio.ts`), not an error.

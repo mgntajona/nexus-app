@@ -44,7 +44,7 @@ export const faerieTheme = createTheme("faerie", {
     shape: "petal",
   },
   assets: {
-    portrait: "/images/faerie/portrait.svg",
+    portrait: "/images/faerie/portrait.webp",
     signatureAudio: "/audio/faerie/select.mp3",
     confirmAudio: "/audio/faerie/confirm.mp3",
   },
