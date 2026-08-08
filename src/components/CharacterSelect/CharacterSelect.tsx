@@ -115,7 +115,6 @@ export function CharacterSelect() {
                 <span className={styles.emblem} aria-hidden="true">
                   ?
                 </span>
-                <span className={styles.nameplate}>{entry.label}</span>
               </button>
             );
           }
@@ -150,7 +149,6 @@ export function CharacterSelect() {
               <span className={styles.portraitWrap}>
                 <Image src={theme.assets.portrait} alt="" fill className={styles.portrait} />
               </span>
-              <span className={styles.nameplate}>{theme.copy.name}</span>
             </button>
           );
         })}

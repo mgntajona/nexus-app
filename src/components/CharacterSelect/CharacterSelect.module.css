@@ -56,12 +56,12 @@
 }
 
 .card {
-  --panel-w: clamp(120px, 11vw, 168px);
+  --panel-w: clamp(92px, 8vw, 132px);
   --slant: 16%;
   display: block;
   position: relative;
   width: var(--panel-w);
-  aspect-ratio: 5 / 8;
+  aspect-ratio: 1 / 2.1;
   background: none;
   border: none;
   padding: 0;
@@ -200,25 +200,6 @@
 
 .card:focus-visible .portrait {
   filter: brightness(1.08) saturate(1.15);
-}
-
-/* Bottom nameplate overlay, HUD-style, inset from the edges so it reads
-   as sitting on the slanted frame rather than overhanging its corners. */
-.nameplate {
-  position: absolute;
-  left: 10%;
-  right: 10%;
-  bottom: 0;
-  z-index: 2;
-  padding: 20px 4px 8px;
-  text-align: center;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0));
-  color: #fff;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .continueBadge {
