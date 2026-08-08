@@ -1,4 +1,10 @@
 .screen {
+  /* Scoped to the select screen only — Merch/Shows/Contact and the bottom
+     nav stay on the shared Default theme tokens. Local names (not
+     --colors-ink) so this doesn't leak into .frameFill, which reuses
+     --colors-ink for the panel's own fill color, not screen text. */
+  --select-ink: #f4f3f1;
+  --select-ink-muted: #9a968f;
   position: relative;
   min-height: 100dvh;
   display: flex;
@@ -8,6 +14,7 @@
   gap: 48px;
   padding: 64px 24px;
   overflow: hidden;
+  background: #1c1c1e;
 }
 
 .heading {
@@ -21,12 +28,12 @@
   font-style: var(--font-fontStyleDisplay);
   letter-spacing: var(--font-letterSpacingDisplay);
   font-size: clamp(28px, 5vw, 44px);
-  color: var(--colors-ink);
+  color: var(--select-ink);
 }
 
 .subtitle {
   margin-top: 8px;
-  color: var(--colors-inkMuted);
+  color: var(--select-ink-muted);
   font-family: var(--font-body);
   font-size: 15px;
 }
@@ -236,7 +243,7 @@
 .hint {
   position: relative;
   z-index: 1;
-  color: var(--colors-inkMuted);
+  color: var(--select-ink-muted);
   font-family: var(--font-body);
   font-size: 12px;
   letter-spacing: 0.04em;
