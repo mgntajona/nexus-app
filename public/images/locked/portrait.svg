@@ -6,6 +6,5 @@
     </radialGradient>
   </defs>
   <rect width="400" height="400" fill="url(#bg)"/>
-  <circle cx="200" cy="160" r="90" fill="none" stroke="#4a4750" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.7"/>
-  <text x="200" y="200" text-anchor="middle" font-family="Georgia, serif" font-size="120" fill="#6b6670" opacity="0.85">?</text>
+  <circle cx="200" cy="200" r="120" fill="none" stroke="#4a4750" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.7"/>
 </svg>

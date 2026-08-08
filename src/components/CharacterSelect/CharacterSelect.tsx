@@ -102,8 +102,11 @@ export function CharacterSelect() {
                     fill
                     className={[styles.portrait, styles.lockedPortrait].join(" ")}
                   />
+                  <span className={styles.emblem} aria-hidden="true">
+                    ?
+                  </span>
                 </span>
-                <span className={styles.cardLabel}>{entry.label}</span>
+                <span className={styles.nameplate}>{entry.label}</span>
               </button>
             );
           }
@@ -129,7 +132,7 @@ export function CharacterSelect() {
               <span className={styles.portraitWrap}>
                 <Image src={theme.assets.portrait} alt="" fill className={styles.portrait} />
               </span>
-              <span className={styles.cardLabel}>{theme.copy.name}</span>
+              <span className={styles.nameplate}>{theme.copy.name}</span>
             </button>
           );
         })}

@@ -13,5 +13,4 @@
   <circle cx="200" cy="150" r="72" fill="url(#figure)"/>
   <path d="M80 400 C80 268 130 214 200 214 C270 214 320 268 320 400 Z" fill="url(#figure)"/>
   <circle cx="200" cy="150" r="90" fill="none" stroke="#d63bc4" stroke-width="1.5" opacity="0.35"/>
-  <text x="200" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#8a857d" opacity="0.7">placeholder — swap in art/brand portrait</text>
 </svg>
