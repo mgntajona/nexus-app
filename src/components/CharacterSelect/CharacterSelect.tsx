@@ -95,6 +95,8 @@ export function CharacterSelect() {
                 aria-label="Locked — next era, not yet revealed"
               >
                 <span className={styles.teaser}>{entry.teaser}</span>
+                <span className={styles.frame} aria-hidden="true" />
+                <span className={styles.frameFill} aria-hidden="true" />
                 <span className={styles.portraitWrap}>
                   <Image
                     src="/images/locked/portrait.svg"
@@ -102,9 +104,9 @@ export function CharacterSelect() {
                     fill
                     className={[styles.portrait, styles.lockedPortrait].join(" ")}
                   />
-                  <span className={styles.emblem} aria-hidden="true">
-                    ?
-                  </span>
+                </span>
+                <span className={styles.emblem} aria-hidden="true">
+                  ?
                 </span>
                 <span className={styles.nameplate}>{entry.label}</span>
               </button>
@@ -129,6 +131,8 @@ export function CharacterSelect() {
               aria-label={`Play as ${theme.copy.name}`}
             >
               {isLast && !lockedIn && <span className={styles.continueBadge}>Continue</span>}
+              <span className={styles.frame} aria-hidden="true" />
+              <span className={styles.frameFill} aria-hidden="true" />
               <span className={styles.portraitWrap}>
                 <Image src={theme.assets.portrait} alt="" fill className={styles.portrait} />
               </span>
