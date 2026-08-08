@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 56px;
+  gap: 48px;
   padding: 64px 24px;
   overflow: hidden;
 }
@@ -114,22 +114,12 @@
   background: var(--colors-accent);
 }
 
-/* The hero art bleeds above the frame — that's the "pops out of the box"
-   effect — but still has to match the frame's slant everywhere it overlaps
-   the frame, or a full rectangle just paints over the cut corners and the
-   slant never reads. This clip-path is that shape: full width for the
-   bleed strip above the frame (0%–13.43%, i.e. the 18% bleed over the
-   134%-tall box), then it tapers to match --slant exactly at the frame's
-   top (13.43%) and bottom (88.06% = (18+100)/134) edges. */
 .portraitWrap {
   display: block;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: -18%;
-  height: 134%;
+  inset: 0;
   z-index: 1;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 13.43%, 84% 100%, 0% 100%, 16% 13.43%);
+  clip-path: polygon(var(--slant) 0%, 100% 0%, calc(100% - var(--slant)) 100%, 0% 100%);
 }
 
 .portrait {
@@ -222,7 +212,7 @@
 .teaser {
   position: absolute;
   left: 50%;
-  bottom: calc(100% + 26px);
+  bottom: calc(100% + 10px);
   transform: translateX(-50%);
   width: 220px;
   padding: 10px 12px;
