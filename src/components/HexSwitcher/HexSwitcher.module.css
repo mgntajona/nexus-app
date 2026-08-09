@@ -3,45 +3,44 @@
   z-index: 20;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: clamp(2px, 1.5vw, 10px);
-  padding: 26px 24px 34px;
+  align-items: flex-start;
+  padding: 22px 24px 40px;
   background: var(--colors-bg);
 }
 
-/* Pointy-top hexagon. Each icon gets its own small fixed tilt/lift via
-   --rest (set per nth-child below) instead of sitting in a perfectly
-   straight row — a scattered, hand-placed feel rather than a tidy line.
-   Values are fixed, not runtime-random: real randomness would differ
-   between server and client render and fail hydration. */
+/* Real hexagon-grid adjacency, not just icons placed close together.
+   Flat-top hexagons (regular proportions: height = width * 0.866) tile
+   into columns, each offset half a hex-height from its neighbor —
+   spacing each column 0.75 of a hex-width apart (via negative margin)
+   makes every icon's angled edge touch the next one's, with the
+   alternating vertical offset doing double duty as the "not a straight
+   row" zigzag. Rotating individual hexagons (the earlier attempt at
+   looking scattered) is incompatible with this — a rotated hex's edges
+   no longer line up with its unrotated neighbors. */
 .hex {
-  --hex-w: clamp(46px, 7vw, 66px);
-  --rest: translateY(0) rotate(0deg);
+  --hex-w: clamp(46px, 7.5vw, 68px);
+  --hex-h: calc(var(--hex-w) * 0.866);
+  --zigzag: 0px;
   position: relative;
   width: var(--hex-w);
-  aspect-ratio: 1;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  height: var(--hex-h);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   overflow: hidden;
   cursor: pointer;
   outline: none;
-  transform: var(--rest);
+  transform: translateY(var(--zigzag));
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
   transition:
     transform var(--motion-fast) var(--motion-easing),
     filter var(--motion-fast) var(--motion-easing);
 }
 
-.hex:nth-child(1) {
-  --rest: translateY(8px) rotate(-6deg);
+.hex:not(:first-child) {
+  margin-left: calc(var(--hex-w) * -0.25);
 }
-.hex:nth-child(2) {
-  --rest: translateY(-10px) rotate(4deg);
-}
-.hex:nth-child(3) {
-  --rest: translateY(3px) rotate(-3deg);
-}
-.hex:nth-child(4) {
-  --rest: translateY(-5px) rotate(7deg);
+
+.hex:nth-child(even) {
+  --zigzag: calc(var(--hex-h) * 0.5);
 }
 
 .hex:hover,
@@ -61,13 +60,13 @@
 
 @media (hover: hover) {
   .hex:hover {
-    transform: var(--rest) translateY(-6px) scale(1.1);
+    transform: translateY(calc(var(--zigzag) - 6px)) scale(1.1);
     filter: drop-shadow(0 0 10px var(--colors-glow)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
   }
 }
 
 .hex:focus-visible {
-  transform: var(--rest) translateY(-6px) scale(1.1);
+  transform: translateY(calc(var(--zigzag) - 6px)) scale(1.1);
   filter: drop-shadow(0 0 10px var(--colors-glow)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
 }
 
@@ -87,7 +86,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 20px;
   color: rgba(255, 255, 255, 0.5);
   pointer-events: none;
 }
@@ -99,20 +98,20 @@
 @keyframes shake {
   10%,
   90% {
-    transform: var(--rest) translateX(-2px);
+    transform: translateY(var(--zigzag)) translateX(-2px);
   }
   20%,
   80% {
-    transform: var(--rest) translateX(3px);
+    transform: translateY(var(--zigzag)) translateX(3px);
   }
   30%,
   50%,
   70% {
-    transform: var(--rest) translateX(-4px);
+    transform: translateY(var(--zigzag)) translateX(-4px);
   }
   40%,
   60% {
-    transform: var(--rest) translateX(4px);
+    transform: translateY(var(--zigzag)) translateX(4px);
   }
 }
 
