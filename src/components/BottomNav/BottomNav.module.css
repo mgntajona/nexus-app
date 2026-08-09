@@ -1,0 +1,88 @@
+.nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 14px;
+  background: var(--colors-surface);
+  border-top: 1px solid var(--colors-surfaceBorder);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.link {
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--colors-inkMuted);
+  white-space: nowrap;
+  transition:
+    color var(--motion-fast) var(--motion-easing),
+    background-color var(--motion-fast) var(--motion-easing);
+}
+
+.link:focus-visible {
+  color: var(--colors-accent);
+  background: var(--colors-bgAlt);
+  outline: none;
+}
+
+/* Gated on real hover support — a tap on touch can otherwise leave a nav
+   link "stuck" looking active until the user taps elsewhere. */
+@media (hover: hover) {
+  .link:hover {
+    color: var(--colors-accent);
+    background: var(--colors-bgAlt);
+  }
+}
+
+.home {
+  font-family: var(--font-display);
+  font-weight: bold;
+  color: var(--colors-accent);
+  padding: 8px 18px;
+  white-space: nowrap;
+}
+
+.divider {
+  width: 1px;
+  align-self: stretch;
+  margin: 6px 4px;
+  background: var(--colors-surfaceBorder);
+}
+
+.short {
+  display: none;
+}
+
+/* Below this, "Contact & Booking" has no readable one-line shrink — swap
+   to the abbreviated label instead of letting it wrap to three lines. */
+@media (max-width: 480px) {
+  .nav {
+    gap: 2px;
+    padding: 8px 8px;
+  }
+
+  .link,
+  .home {
+    /* Generous vertical padding costs nothing on row width (only
+       horizontal padding does) and gets these much closer to a 44px
+       touch target without the row wrapping again. */
+    padding: 15px 10px;
+    font-size: 11px;
+  }
+
+  .full {
+    display: none;
+  }
+
+  .short {
+    display: inline;
+  }
+}

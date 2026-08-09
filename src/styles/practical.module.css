@@ -1,0 +1,143 @@
+/* Shared layout for the bottom-nav pages (Merch, Shows, Contact) — these
+   stay on the Default theme always, never wrapped in an era ThemeProvider. */
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  /* Bottom padding clears the fixed BottomNav — this page has no
+     min-height:100dvh section of its own, so unlike .screen this is the
+     only place that clearance needs to live. */
+  padding: 72px 24px 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 40px);
+  color: var(--colors-ink);
+}
+
+.intro {
+  font-family: var(--font-body);
+  color: var(--colors-inkMuted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  padding: 18px;
+  border-radius: var(--radius-md);
+  background: var(--colors-surface);
+  border: 1px solid var(--colors-surfaceBorder);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cardName {
+  font-family: var(--font-display);
+  font-size: 17px;
+}
+
+.cardMeta {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--colors-inkMuted);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: var(--colors-surface);
+  border: 1px solid var(--colors-surfaceBorder);
+}
+
+.empty {
+  padding: 32px;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--colors-surfaceBorder);
+  color: var(--colors-inkMuted);
+  font-family: var(--font-body);
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 460px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--colors-inkMuted);
+}
+
+.input,
+.select,
+.textarea {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--colors-surfaceBorder);
+  background: var(--colors-surface);
+  color: var(--colors-ink);
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.button {
+  align-self: flex-start;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  background: var(--colors-accent);
+  color: var(--colors-surface);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.button:disabled {
+  opacity: 0.6;
+}
+
+.success {
+  color: var(--colors-accent);
+  font-family: var(--font-body);
+  font-size: 13px;
+}
+
+.error {
+  color: var(--colors-accent3);
+  font-family: var(--font-body);
+  font-size: 13px;
+}
