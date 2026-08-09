@@ -6,7 +6,7 @@
 
 .hero {
   position: relative;
-  min-height: 80dvh;
+  min-height: 70dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,6 +30,9 @@
   overflow: hidden;
   box-shadow: var(--shadow-glow);
   border: 2px solid var(--colors-surfaceBorder);
+  transition:
+    box-shadow var(--motion-base) var(--motion-easing),
+    border-color var(--motion-base) var(--motion-easing);
 }
 
 .portrait {
@@ -57,20 +60,6 @@
   color: var(--colors-inkMuted);
   font-size: 16px;
   line-height: 1.6;
-}
-
-.backLink {
-  margin-top: 8px;
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--colors-inkMuted);
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--motion-fast) var(--motion-easing);
-}
-
-.backLink:hover {
-  border-color: var(--colors-accent);
-  color: var(--colors-accent);
 }
 
 .section {

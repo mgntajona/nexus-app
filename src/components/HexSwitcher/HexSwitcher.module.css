@@ -1,0 +1,132 @@
+.switcher {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 24px 26px;
+  background: var(--colors-bg);
+}
+
+/* Pointy-top hexagon, tiled into a honeycomb strip by overlapping each
+   one 26% of its own width into the next — the slanted edges meet with
+   no gap, instead of a row of separate spaced-out icons. */
+.hex {
+  --hex-w: clamp(44px, 7vw, 64px);
+  position: relative;
+  width: var(--hex-w);
+  aspect-ratio: 1;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+  transition:
+    transform var(--motion-fast) var(--motion-easing),
+    filter var(--motion-fast) var(--motion-easing);
+}
+
+.hex:not(:first-child) {
+  margin-left: calc(var(--hex-w) * -0.26);
+}
+
+.hex:hover,
+.hex:focus-visible {
+  z-index: 1;
+}
+
+.hexImg {
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+
+.active {
+  filter: drop-shadow(0 0 6px var(--colors-accent)) drop-shadow(0 0 16px var(--colors-glow))
+    drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+}
+
+@media (hover: hover) {
+  .hex:hover {
+    transform: translateY(-5px) scale(1.1);
+    filter: drop-shadow(0 0 10px var(--colors-glow)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+  }
+}
+
+.hex:focus-visible {
+  transform: translateY(-5px) scale(1.1);
+  filter: drop-shadow(0 0 10px var(--colors-glow)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+}
+
+.locked {
+  cursor: default;
+}
+
+.lockedImg {
+  filter: grayscale(1) brightness(0.6);
+}
+
+.emblem {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+.locked.shake {
+  animation: shake 400ms ease;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translateX(-2px);
+  }
+  20%,
+  80% {
+    transform: translateX(3px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translateX(-4px);
+  }
+  40%,
+  60% {
+    transform: translateX(4px);
+  }
+}
+
+.teaser {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  transform: translateX(-50%);
+  width: 200px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--colors-ink);
+  color: var(--colors-surface);
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--motion-fast) var(--motion-easing);
+  z-index: 3;
+}
+
+.locked:focus-visible .teaser {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .locked:hover .teaser {
+    opacity: 1;
+  }
+}

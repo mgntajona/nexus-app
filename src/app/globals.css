@@ -58,14 +58,12 @@ svg {
   transition: background-color var(--motion-base) var(--motion-easing);
 }
 
-.app-content {
-  min-height: 100dvh;
-}
-/* Bottom-nav clearance lives on each page's own content instead of here —
-   stacking a fixed padding-bottom on top of a child that's already
-   min-height:100dvh pushes the total past the viewport (100dvh + padding),
-   which is exactly the extra scroll a short mobile viewport has no room
-   to hide. */
+/* No min-height here on purpose. .app-shell already enforces one viewport
+   as a floor; giving .app-content its own 100dvh floor too would stack on
+   top of HexSwitcher's real (in-flow) height above it, pushing every page
+   taller than the viewport for no reason. Bottom-nav clearance lives on
+   each page's own content instead of a blanket padding-bottom here — that
+   was the same double-counting problem in a different shape. */
 
 @media (prefers-reduced-motion: reduce) {
   *,

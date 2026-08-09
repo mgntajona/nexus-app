@@ -7,17 +7,17 @@ export type EraId = "default" | "shadowork" | "faerie";
 
 export type CharacterEntry =
   | { id: EraId; locked: false; theme: Theme }
-  | { id: "locked"; locked: true; label: string; teaser: string };
+  | { id: "locked"; locked: true; teaser: string };
 
 /**
- * The character-select data source. One entry per playable era, in display
+ * The hex switcher's data source. One entry per playable era, in display
  * order, plus a trailing locked slot for the next unreleased era.
  *
  * To add a new era once it's real: write a new theme file (copy
  * `faerie.ts`'s shape), then replace the locked entry below with a real
  * one and append a fresh locked slot after it if there's another tease
- * coming. Nothing else in the character-select UI needs to change — it
- * reads this array.
+ * coming. Nothing else needs to change — the switcher and `getTheme()`
+ * both just read this array.
  */
 export const ERAS: CharacterEntry[] = [
   { id: "default", locked: false, theme: defaultTheme },
@@ -26,7 +26,6 @@ export const ERAS: CharacterEntry[] = [
   {
     id: "locked",
     locked: true,
-    label: "???",
     teaser: "something's coming. i'd tell you what, but honestly — you're not ready.",
   },
 ];

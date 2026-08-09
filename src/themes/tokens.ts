@@ -17,7 +17,7 @@ export type ParticlePreset = {
 };
 
 export type EraAssets = {
-  /** Portrait shown on the character-select card and world hero. */
+  /** Portrait shown on the hex switcher icon and the home page hero. */
   portrait: string;
   /** Short (~2-4s) signature snippet played on hover/select. Optional — a
    * missing/silent file is a no-op, never a thrown error. */

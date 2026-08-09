@@ -3,9 +3,9 @@
 import { useCallback, useEffect, useRef } from "react";
 
 /**
- * One shared <audio> element for the character-select screen. A missing or
- * failing snippet file is a no-op — never a thrown error, never console
- * noise the artist has to chase down before real audio exists.
+ * One shared <audio> element for the era switcher. A missing or failing
+ * snippet file is a no-op — never a thrown error, never console noise the
+ * artist has to chase down before real audio exists.
  */
 export function useEraAudio() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
