@@ -24,20 +24,20 @@ export function EmailCapture() {
         body: JSON.stringify({ email }),
       });
       const body = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(body.error || "Something went wrong");
+      if (!res.ok) throw new Error(body.error || "something went wrong");
       setStatus("success");
-      setMessage("You're on the list.");
+      setMessage("you're on the list.");
       setEmail("");
     } catch (err) {
       setStatus("error");
-      setMessage(err instanceof Error ? err.message : "Something went wrong");
+      setMessage(err instanceof Error ? err.message : "something went wrong");
     }
   }
 
   return (
     <form className={styles.form} onSubmit={onSubmit}>
       <label className={styles.label} htmlFor="email-capture">
-        Stay in the loop
+        stay in the loop
       </label>
       <div className={styles.row}>
         <input
@@ -51,7 +51,7 @@ export function EmailCapture() {
           disabled={status === "loading"}
         />
         <button type="submit" className={styles.button} disabled={status === "loading"}>
-          {status === "loading" ? "Joining…" : "Join"}
+          {status === "loading" ? "joining…" : "join"}
         </button>
       </div>
       {status === "success" && <p className={styles.success}>{message}</p>}

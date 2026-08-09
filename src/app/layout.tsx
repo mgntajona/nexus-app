@@ -5,8 +5,8 @@ import { defaultTheme } from "@/themes/default";
 import { BottomNav } from "@/components/BottomNav/BottomNav";
 
 export const metadata: Metadata = {
-  title: "Jona Mgnta",
-  description: "Jona Mgnta — two worlds, one artist.",
+  title: "jona mgnta",
+  description: "jona mgnta — two worlds, one artist.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

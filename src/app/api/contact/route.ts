@@ -18,7 +18,7 @@ export async function POST(request: Request) {
 
   if (!apiKey) {
     return NextResponse.json(
-      { error: "Contact form isn't configured yet (RESEND_API_KEY)." },
+      { error: "contact form isn't configured yet (RESEND_API_KEY)." },
       { status: 503 },
     );
   }
@@ -27,36 +27,36 @@ export async function POST(request: Request) {
   try {
     payload = await request.json();
   } catch {
-    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+    return NextResponse.json({ error: "invalid request body." }, { status: 400 });
   }
 
   const { name, email, inquiryType, message } = payload;
 
   if (typeof name !== "string" || !name.trim()) {
-    return NextResponse.json({ error: "Name is required." }, { status: 400 });
+    return NextResponse.json({ error: "name is required." }, { status: 400 });
   }
   if (typeof email !== "string" || !EMAIL_RE.test(email)) {
-    return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
+    return NextResponse.json({ error: "enter a valid email address." }, { status: 400 });
   }
   if (typeof message !== "string" || !message.trim()) {
-    return NextResponse.json({ error: "Message is required." }, { status: 400 });
+    return NextResponse.json({ error: "message is required." }, { status: 400 });
   }
   const type = typeof inquiryType === "string" && INQUIRY_TYPES.has(inquiryType) ? inquiryType : "general";
 
   const resend = new Resend(apiKey);
   const to = process.env.CONTACT_TO_EMAIL || "mgntajona@gmail.com";
-  const from = process.env.CONTACT_FROM_EMAIL || "Jona Mgnta Site <onboarding@resend.dev>";
+  const from = process.env.CONTACT_FROM_EMAIL || "jona mgnta site <onboarding@resend.dev>";
 
   const { error } = await resend.emails.send({
     from,
     to,
     replyTo: email,
-    subject: `[${type}] New inquiry from ${name}`,
-    text: `From: ${name} <${email}>\nType: ${type}\n\n${message}`,
+    subject: `[${type}] new inquiry from ${name}`,
+    text: `from: ${name} <${email}>\ntype: ${type}\n\n${message}`,
   });
 
   if (error) {
-    return NextResponse.json({ error: "Couldn't send — try again." }, { status: 502 });
+    return NextResponse.json({ error: "couldn't send — try again." }, { status: 502 });
   }
 
   return NextResponse.json({ ok: true });

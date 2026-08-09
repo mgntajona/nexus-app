@@ -60,14 +60,14 @@ export function CharacterSelect() {
     <section className={styles.screen}>
       <Particles />
       <div className={styles.heading}>
-        <h1 className={styles.title}>Choose your world</h1>
-        <p className={styles.subtitle}>Two worlds, one artist.</p>
+        <h1 className={styles.title}>choose your world</h1>
+        <p className={styles.subtitle}>two worlds, one artist.</p>
       </div>
 
       <div
         className={styles.grid}
         role="listbox"
-        aria-label="Character select"
+        aria-label="character select"
         onKeyDown={(e) => {
           const currentIndex = cardRefs.current.findIndex((el) => el === document.activeElement);
           if (e.key === "ArrowRight" || e.key === "ArrowDown") {
@@ -92,7 +92,7 @@ export function CharacterSelect() {
                 onMouseEnter={touchLocked}
                 onFocus={touchLocked}
                 onClick={touchLocked}
-                aria-label="Locked — next era, not yet revealed"
+                aria-label="locked — next era, not yet revealed"
               >
                 <span className={styles.teaser}>{entry.teaser}</span>
                 <span className={styles.frame} aria-hidden="true" />
@@ -134,9 +134,9 @@ export function CharacterSelect() {
               onMouseLeave={() => audio.stop()}
               onBlur={() => audio.stop()}
               onClick={() => select(entry.id, theme.assets.confirmAudio)}
-              aria-label={`Play as ${theme.copy.name}`}
+              aria-label={`play as ${theme.copy.name}`}
             >
-              {isLast && !lockedIn && <span className={styles.continueBadge}>Continue</span>}
+              {isLast && !lockedIn && <span className={styles.continueBadge}>continue</span>}
               <span className={styles.frame} aria-hidden="true" />
               <span className={styles.frameGroove} aria-hidden="true" />
               <span className={styles.frameFill} aria-hidden="true" />
@@ -154,7 +154,7 @@ export function CharacterSelect() {
         })}
       </div>
 
-      <p className={styles.hint}>Hover to listen. Select to enter.</p>
+      <p className={styles.hint}>hover to listen. select to enter.</p>
     </section>
   );
 }

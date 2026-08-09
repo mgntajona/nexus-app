@@ -26,13 +26,13 @@ export function ContactForm() {
         body: JSON.stringify(payload),
       });
       const body = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(body.error || "Something went wrong");
+      if (!res.ok) throw new Error(body.error || "something went wrong");
       setStatus("success");
-      setMessage("Sent — thanks, you'll hear back soon.");
+      setMessage("sent — thanks, you'll hear back soon.");
       e.currentTarget.reset();
     } catch (err) {
       setStatus("error");
-      setMessage(err instanceof Error ? err.message : "Something went wrong");
+      setMessage(err instanceof Error ? err.message : "something went wrong");
     }
   }
 
@@ -40,13 +40,13 @@ export function ContactForm() {
     <form className={styles.form} onSubmit={onSubmit}>
       <div className={styles.field}>
         <label className={styles.label} htmlFor="name">
-          Name
+          name
         </label>
         <input id="name" name="name" required className={styles.input} disabled={status === "loading"} />
       </div>
       <div className={styles.field}>
         <label className={styles.label} htmlFor="email">
-          Email
+          email
         </label>
         <input
           id="email"
@@ -59,22 +59,22 @@ export function ContactForm() {
       </div>
       <div className={styles.field}>
         <label className={styles.label} htmlFor="inquiryType">
-          Inquiry type
+          inquiry type
         </label>
         <select id="inquiryType" name="inquiryType" className={styles.select} disabled={status === "loading"}>
-          <option value="press">Press</option>
-          <option value="booking">Booking</option>
-          <option value="general">General</option>
+          <option value="press">press</option>
+          <option value="booking">booking</option>
+          <option value="general">general</option>
         </select>
       </div>
       <div className={styles.field}>
         <label className={styles.label} htmlFor="message">
-          Message
+          message
         </label>
         <textarea id="message" name="message" required className={styles.textarea} disabled={status === "loading"} />
       </div>
       <button type="submit" className={styles.button} disabled={status === "loading"}>
-        {status === "loading" ? "Sending…" : "Send"}
+        {status === "loading" ? "sending…" : "send"}
       </button>
       {status === "success" && <p className={styles.success}>{message}</p>}
       {status === "error" && <p className={styles.error}>{message}</p>}

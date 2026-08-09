@@ -54,10 +54,10 @@ export const defaultTheme: Theme = {
     confirmAudio: "/audio/default/confirm.mp3",
   },
   copy: {
-    name: "Jona",
-    tagline: "Between worlds",
+    name: "jona",
+    tagline: "between worlds",
     blurb:
-      "The in-between. Not SHADOWORK, not Faerie — the artist before the split, and the ground every other era stands on.",
+      "the in-between. not shadowork, not faerie — the artist before the split, and the ground every other era stands on.",
   },
   spotify: {
     embedUris: ["https://open.spotify.com/embed/artist/3AgtIu6QdjPRCbIPuyogoV"],

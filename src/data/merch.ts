@@ -10,9 +10,9 @@ export type MerchItem = {
 // is ready. Shape is deliberately simple (no cart/checkout) since no
 // e-commerce backend was specified for pass one.
 export const MERCH: MerchItem[] = [
-  { id: "shadowork-tee", name: "SHADOWORK Tee", price: "$32", world: "shadowork" },
-  { id: "faerie-tee", name: "Faerie Garden Tee", price: "$32", world: "faerie" },
-  { id: "faerie-vinyl", name: "Faerie — Mixtape Vinyl", price: "$28", world: "faerie" },
-  { id: "shadowork-ep-cd", name: "SHADOWORK — Debut EP CD", price: "$14", world: "shadowork" },
-  { id: "logo-pin", name: "Magenta Logo Pin", price: "$10", world: "both" },
+  { id: "shadowork-tee", name: "shadowork tee", price: "$32", world: "shadowork" },
+  { id: "faerie-tee", name: "faerie garden tee", price: "$32", world: "faerie" },
+  { id: "faerie-vinyl", name: "faerie — mixtape vinyl", price: "$28", world: "faerie" },
+  { id: "shadowork-ep-cd", name: "shadowork — debut ep cd", price: "$14", world: "shadowork" },
+  { id: "logo-pin", name: "magenta logo pin", price: "$10", world: "both" },
 ];

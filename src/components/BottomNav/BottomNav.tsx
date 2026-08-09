@@ -2,9 +2,9 @@ import Link from "next/link";
 import styles from "./BottomNav.module.css";
 
 const LINKS = [
-  { href: "/merch", label: "Merch", short: "Merch" },
-  { href: "/shows", label: "Show Dates", short: "Shows" },
-  { href: "/contact", label: "Contact & Booking", short: "Contact" },
+  { href: "/merch", label: "merch", short: "merch" },
+  { href: "/shows", label: "show dates", short: "shows" },
+  { href: "/contact", label: "contact & booking", short: "contact" },
 ];
 
 /**
@@ -21,9 +21,9 @@ const LINKS = [
  */
 export function BottomNav() {
   return (
-    <nav className={styles.nav} aria-label="Site">
+    <nav className={styles.nav} aria-label="site">
       <Link href="/" className={styles.home}>
-        Jona Mgnta
+        jona mgnta
       </Link>
       <span className={styles.divider} aria-hidden="true" />
       {LINKS.map((link) => (

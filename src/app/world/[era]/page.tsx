@@ -23,7 +23,7 @@ export async function generateMetadata({
   const theme = getTheme(era);
   if (!theme) return {};
   return {
-    title: `${theme.copy.name} — Jona Mgnta`,
+    title: `${theme.copy.name} — jona mgnta`,
     description: theme.copy.blurb,
   };
 }
@@ -64,7 +64,7 @@ export default async function WorldPage({
 
       <section className={styles.section}>
         <Reveal>
-          <h2 className={styles.sectionTitle}>Music</h2>
+          <h2 className={styles.sectionTitle}>music</h2>
         </Reveal>
         <Reveal delay={80}>
           <div className={styles.spotifyStack}>

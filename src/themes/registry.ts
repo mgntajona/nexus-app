@@ -27,7 +27,7 @@ export const ERAS: CharacterEntry[] = [
     id: "locked",
     locked: true,
     label: "???",
-    teaser: "Something's coming. I'd tell you what, but honestly — you're not ready.",
+    teaser: "something's coming. i'd tell you what, but honestly — you're not ready.",
   },
 ];
 

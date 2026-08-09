@@ -50,7 +50,6 @@
   color: var(--colors-accent);
   font-size: 15px;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
 }
 
 .blurb {

@@ -50,10 +50,10 @@ export const shadoworkTheme = createTheme("shadowork", {
     confirmAudio: "/audio/shadowork/confirm.mp3",
   },
   copy: {
-    name: "SHADOWORK",
-    tagline: "The dark half is awake",
+    name: "shadowork",
+    tagline: "the dark half is awake",
     blurb:
-      "Industrial, moody, unfinished on purpose. The debut EP's world — every scene rotoscoped from real footage, nothing softened for you.",
+      "industrial, moody, unfinished on purpose. the debut ep's world — every scene rotoscoped from real footage, nothing softened for you.",
   },
   spotify: {
     embedUris: ["https://open.spotify.com/embed/artist/3AgtIu6QdjPRCbIPuyogoV"],

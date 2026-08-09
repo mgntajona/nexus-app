@@ -14,7 +14,7 @@ export function SpotifyEmbed({ uri }: { uri: string }) {
       style={{ border: 0 }}
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy"
-      title="Spotify player"
+      title="spotify player"
     />
   );
 }

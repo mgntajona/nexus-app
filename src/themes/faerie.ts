@@ -49,10 +49,10 @@ export const faerieTheme = createTheme("faerie", {
     confirmAudio: "/audio/faerie/confirm.mp3",
   },
   copy: {
-    name: "Faerie",
-    tagline: "You've been here before",
+    name: "faerie",
+    tagline: "you've been here before",
     blurb:
-      "Bright, ethereal, garden-grown. The mixtape's world — 'Invisible,' 'Love Spell,' 'Green Lady' — dropping Aug 7, 2026.",
+      "bright, ethereal, garden-grown. the mixtape's world — 'invisible,' 'love spell,' 'green lady' — dropping aug 7, 2026.",
   },
   spotify: {
     embedUris: ["https://open.spotify.com/embed/artist/3AgtIu6QdjPRCbIPuyogoV"],

@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import { MERCH } from "@/data/merch";
 import styles from "@/styles/practical.module.css";
 
-export const metadata: Metadata = { title: "Merch — Jona Mgnta" };
+export const metadata: Metadata = { title: "merch — jona mgnta" };
 
 const WORLD_LABEL: Record<string, string> = {
-  shadowork: "SHADOWORK",
-  faerie: "Faerie",
-  both: "Both worlds",
+  shadowork: "shadowork",
+  faerie: "faerie",
+  both: "both worlds",
 };
 
 export default function MerchPage() {
   return (
     <div className={styles.page}>
-      <h1 className={styles.title}>Merch</h1>
+      <h1 className={styles.title}>merch</h1>
       <p className={styles.intro}>
-        Placeholder catalogue — real product links and checkout land here once the storefront is wired up.
+        placeholder catalogue — real product links and checkout land here once the storefront is wired up.
       </p>
       <div className={styles.grid}>
         {MERCH.map((item) => (
